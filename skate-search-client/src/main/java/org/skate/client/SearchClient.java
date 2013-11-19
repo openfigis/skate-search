@@ -3,8 +3,8 @@ package org.skate.client;
 import javax.ws.rs.core.MediaType;
 
 import org.skate.service.SearchService;
-import org.skate.service.request.AdvancedSearchRequest;
-import org.skate.service.response.SearchResult;
+import org.skate.service.request.PublicationSearchRequest;
+import org.skate.service.response.PublicationSearchResult;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -30,24 +30,24 @@ public class SearchClient implements SearchService {
 	private static String SERIESTITLE = "seriesTitle";
 
 	@Override
-	public SearchResult search(String searchTerm) {
+	public PublicationSearchResult search(String searchTerm) {
 
 		ClientResponse response = getWebResource(SERVER).queryParam(SEARCH_TERM, searchTerm)
 				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
 		evaluateResponse(response);
-		return response.getEntity(SearchResult.class);
+		return response.getEntity(PublicationSearchResult.class);
 
 	}
 
 	@Override
-	public SearchResult search(AdvancedSearchRequest sp) {
+	public PublicationSearchResult search(PublicationSearchRequest sp) {
 		WebResource wr = getWebResource(ADVANCEDSERVER).queryParam(SEARCH_TERM, sp.getSearchTerm())
 				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
 				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
 				.queryParam(LANGUAGE, sp.getLanguage()).queryParam(SERIESTITLE, sp.getSeriesTitle());
 		ClientResponse response = wr.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
 		evaluateResponse(response);
-		return response.getEntity(SearchResult.class);
+		return response.getEntity(PublicationSearchResult.class);
 	}
 
 	private WebResource getWebResource(String server) {

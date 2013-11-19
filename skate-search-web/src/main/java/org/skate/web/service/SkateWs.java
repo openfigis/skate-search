@@ -9,8 +9,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.skate.service.SearchService;
-import org.skate.service.request.AdvancedSearchRequest;
-import org.skate.service.response.SearchResult;
+import org.skate.service.request.PublicationSearchRequest;
+import org.skate.service.response.PublicationSearchResult;
 
 /**
  * 
@@ -28,7 +28,7 @@ public class SkateWs {
 	@Path("search")
 	@Produces(MediaType.APPLICATION_JSON)
 	// @CrossOriginResourceSharing(allowAllOrigins = true)
-	public SearchResult search(@QueryParam("searchTerm") String searchTerm) {
+	public PublicationSearchResult search(@QueryParam("searchTerm") String searchTerm) {
 		System.out.println("hitting SkateWs search searchTerm!!! with searchTerm:" + searchTerm);
 
 		return service.search(searchTerm);
@@ -37,7 +37,7 @@ public class SkateWs {
 	@GET
 	@Path("advancedsearch")
 	@Produces(MediaType.APPLICATION_JSON)
-	public SearchResult advancedSearch(@QueryParam("searchTerm") String searchTerm,
+	public PublicationSearchResult advancedSearch(@QueryParam("searchTerm") String searchTerm,
 			@QueryParam("wordInTitle") String wordInTitle, @QueryParam("authors") String authors,
 			@QueryParam("publicationYear") int publicationYear, @QueryParam("language") String language,
 			@QueryParam("seriesTitle") String seriesTitle
@@ -45,7 +45,7 @@ public class SkateWs {
 	) {
 		System.out.println("hitting SkateWs search advancedSearchRequest!!! with searchTerm:" + searchTerm);
 
-		AdvancedSearchRequest r = new AdvancedSearchRequest();
+		PublicationSearchRequest r = new PublicationSearchRequest();
 		r.setAuthors(authors);
 		r.setLanguage(language);
 		r.setPublicationYear(publicationYear);

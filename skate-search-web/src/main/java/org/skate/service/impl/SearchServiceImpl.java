@@ -1,8 +1,8 @@
 package org.skate.service.impl;
 
 import org.skate.service.SearchService;
-import org.skate.service.request.AdvancedSearchRequest;
-import org.skate.service.response.SearchResult;
+import org.skate.service.request.PublicationSearchRequest;
+import org.skate.service.response.PublicationSearchResult;
 import org.skate.service.test.SearchResultMock;
 import org.skate.service.test.SkateAbstractServiceTest;
 
@@ -11,16 +11,16 @@ import org.skate.service.test.SkateAbstractServiceTest;
  * 
  */
 
-public class SkateServiceImpl implements SearchService {
+public class SearchServiceImpl implements SearchService {
 
 	@Override
-	public SearchResult search(String searchTerm) {
+	public PublicationSearchResult search(String searchTerm) {
 		return SearchResultMock.get();
 
 	}
 
 	@Override
-	public SearchResult search(AdvancedSearchRequest searchParameters) {
+	public PublicationSearchResult search(PublicationSearchRequest searchParameters) {
 		return SearchResultMock.get(SkateAbstractServiceTest.ENTRIES_FOUND);
 	}
 

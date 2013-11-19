@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.skate.service.SkateException;
-import org.skate.service.response.FoundElement;
 import org.skate.service.response.InfoLinkIcon;
 import org.skate.service.response.LinkType;
-import org.skate.service.response.SearchResult;
+import org.skate.service.response.PublicationEntryFound;
+import org.skate.service.response.PublicationSearchResult;
 
 public class SearchResultMock {
 
-	public static SearchResult get(int numberOfElements) {
+	public static PublicationSearchResult get(int numberOfElements) {
 		InfoLinkIcon fl = new InfoLinkIcon();
 		fl.setLinkType(LinkType.pdf);
 		URL url;
@@ -27,7 +27,7 @@ public class SearchResultMock {
 		List<InfoLinkIcon> infoLinkIconList = new ArrayList<InfoLinkIcon>();
 		infoLinkIconList.add(fl);
 
-		FoundElement f = new FoundElement();
+		PublicationEntryFound f = new PublicationEntryFound();
 		f.setDescription("Implications of the Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 Relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks.");
 		f.setTitle("Fisheries and research for tunas and tuna-like-species in the Western Central Atlantic");
 		f.setHrefHtmlVersion("http://www.fao.org/docrep/X5623E/X5623E00.htm");
@@ -36,18 +36,18 @@ public class SearchResultMock {
 		f.setYear(2013);
 		f.setInfoLinkIconList(infoLinkIconList);
 
-		List<FoundElement> foundElementList = new ArrayList<FoundElement>();
+		List<PublicationEntryFound> foundElementList = new ArrayList<PublicationEntryFound>();
 		for (int i = 0; i < numberOfElements; i++) {
 			foundElementList.add(f);
 		}
-		SearchResult r = new SearchResult();
+		PublicationSearchResult r = new PublicationSearchResult();
 		r.setFoundElementList(foundElementList);
 
 		return r;
 
 	}
 
-	public static SearchResult get() {
+	public static PublicationSearchResult get() {
 		return get(1);
 	}
 

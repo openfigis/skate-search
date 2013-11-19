@@ -5,22 +5,13 @@ package org.skate.service.request;
  * @author Erik van Ingen
  * 
  */
-public class AdvancedSearchRequest {
+public class PublicationSearchRequest extends SearchRequest {
 
-	private String searchTerm;
 	private String wordInTitle;
 	private String authors;
 	private int publicationYear;
 	private String language;
 	private String seriesTitle;
-
-	public String getSearchTerm() {
-		return searchTerm;
-	}
-
-	public void setSearchTerm(String searchTerm) {
-		this.searchTerm = searchTerm;
-	}
 
 	public String getWordInTitle() {
 		return wordInTitle;

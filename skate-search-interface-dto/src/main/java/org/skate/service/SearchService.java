@@ -3,8 +3,8 @@
  */
 package org.skate.service;
 
-import org.skate.service.request.AdvancedSearchRequest;
-import org.skate.service.response.SearchResult;
+import org.skate.service.request.PublicationSearchRequest;
+import org.skate.service.response.PublicationSearchResult;
 
 /**
  * @author Erik van Ingen
@@ -12,8 +12,8 @@ import org.skate.service.response.SearchResult;
  */
 public interface SearchService {
 
-	public SearchResult search(String searchTerm);
+	public PublicationSearchResult search(String searchTerm);
 
-	public SearchResult search(AdvancedSearchRequest searchParameters);
+	public PublicationSearchResult search(PublicationSearchRequest searchParameters);
 
 }

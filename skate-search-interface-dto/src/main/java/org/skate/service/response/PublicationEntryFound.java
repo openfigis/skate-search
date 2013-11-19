@@ -8,7 +8,7 @@ import java.util.List;
  * 
  */
 
-public class FoundElement {
+public class PublicationEntryFound {
 
 	private String title;
 	private String description;
