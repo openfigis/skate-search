@@ -26,7 +26,7 @@ public class SkateWs {
 
 	@GET
 	@Path("search")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({ MediaType.APPLICATION_JSON })
 	// @CrossOriginResourceSharing(allowAllOrigins = true)
 	public PublicationSearchResult search(@QueryParam("searchTerm") String searchTerm) {
 		System.out.println("hitting SkateWs search searchTerm!!! with searchTerm:" + searchTerm);
@@ -36,7 +36,7 @@ public class SkateWs {
 
 	@GET
 	@Path("advancedsearch")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces({ MediaType.APPLICATION_JSON })
 	public PublicationSearchResult advancedSearch(@QueryParam("searchTerm") String searchTerm,
 			@QueryParam("wordInTitle") String wordInTitle, @QueryParam("authors") String authors,
 			@QueryParam("publicationYear") int publicationYear, @QueryParam("language") String language,
