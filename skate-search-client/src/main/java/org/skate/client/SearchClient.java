@@ -20,8 +20,8 @@ import com.sun.jersey.api.json.JSONConfiguration;
  */
 public class SearchClient implements SearchService {
 
-	private static String SERVER = "http://localhost:8080/skate-search-web/rest/search";
-	private static String ADVANCEDSERVER = "http://localhost:8080/skate-search-web/rest/advancedsearch";
+	private static String SERVER = "http://hqldvfigis1:6747/skate-search-web/rest/search";
+	private static String ADVANCEDSERVER = "http://hqldvfigis1:6747/skate-search-web/rest/advancedsearch";
 	private static String SEARCH_TERM = "searchTerm";
 	private static String WORDINTITLE = "wordInTitle";
 	private static String AUTHORS = "authors";
