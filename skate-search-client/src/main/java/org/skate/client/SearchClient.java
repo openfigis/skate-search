@@ -20,8 +20,14 @@ import com.sun.jersey.api.json.JSONConfiguration;
  */
 public class SearchClient implements SearchService {
 
-	private static String SERVER = "http://hqldvfigis1:6747/skate-search-web/rest/search";
-	private static String ADVANCEDSERVER = "http://hqldvfigis1:6747/skate-search-web/rest/advancedsearch";
+	/**
+	 * TODO make this configurable
+	 */
+	private static String SERVER = "http://hqldvfigis1:6747/skate-search-web/";
+
+	private static String SEARCH = SERVER + "rest/search";
+	private static String ADVANCED_SEARCH = SERVER + "rest/advancedsearch";
+
 	private static String SEARCH_TERM = "searchTerm";
 	private static String WORDINTITLE = "wordInTitle";
 	private static String AUTHORS = "authors";
@@ -32,7 +38,7 @@ public class SearchClient implements SearchService {
 	@Override
 	public PublicationSearchResult search(String searchTerm) {
 
-		ClientResponse response = getWebResource(SERVER).queryParam(SEARCH_TERM, searchTerm)
+		ClientResponse response = getWebResource(SEARCH).queryParam(SEARCH_TERM, searchTerm)
 				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(PublicationSearchResult.class);
@@ -41,7 +47,7 @@ public class SearchClient implements SearchService {
 
 	@Override
 	public PublicationSearchResult search(PublicationSearchRequest sp) {
-		WebResource wr = getWebResource(ADVANCEDSERVER).queryParam(SEARCH_TERM, sp.getSearchTerm())
+		WebResource wr = getWebResource(ADVANCED_SEARCH).queryParam(SEARCH_TERM, sp.getSearchTerm())
 				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
 				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
 				.queryParam(LANGUAGE, sp.getLanguage()).queryParam(SERIESTITLE, sp.getSeriesTitle());
