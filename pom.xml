@@ -15,6 +15,7 @@
 	</properties>
 
 	<modules>
+		<module>skate-search-jaxb</module>
 		<module>skate-search-client</module>
 		<module>skate-search-interface-dto</module>
 		<module>skate-search-web</module>
