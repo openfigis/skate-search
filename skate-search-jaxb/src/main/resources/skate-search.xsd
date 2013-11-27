@@ -38,8 +38,8 @@
 
 
 
-	<element name="MultiQuerySearchResult" type="search:MultiQuerySearchResultType"></element>
 	<element name="PublicationSearchResult" type="search:PublicationSearchResultType"></element>
+	<element name="MultiQuerySearchResult" type="search:MultiQuerySearchResultType"></element>
 	<element name="OtherSystemSearchResult"></element>
 
 </schema>
