@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:search="http://www.fao.org/fi/skate/search/">
+
+	<complexType name="MultiQuerySearchResultType">
+		<sequence>
+			<element name="publicationSearchResultList" type="search:PublicationSearchResultType"></element>
+		</sequence>
+	</complexType>
+	<complexType name="PublicationSearchResultType">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element name="publicationEntryFound" type="search:PublicationEntryFoundType"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="PublicationEntryFoundType">
+		<sequence>
+			<element name="infoLinkIcon" type="search:InfoLinkIconType" minOccurs="0" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="ExtendedPublicationEntryFoundType">
+		<complexContent>
+			<extension base="search:PublicationEntryFoundType"></extension>
+		</complexContent>
+	</complexType>
+
+	<complexType name="InfoLinkIconType">
+		<attribute name="url" type="anyURI"></attribute>
+		<attribute name="linkType" type="search:LinkType"></attribute>
+	</complexType>
+	<simpleType name="LinkType">
+		<restriction base="string">
+			<enumeration value="zip" />
+			<enumeration value="pdf" />
+		</restriction>
+	</simpleType>
+
+
+
+	<element name="MultiQuerySearchResult" type="search:MultiQuerySearchResultType"></element>
+	<element name="PublicationSearchResult" type="search:PublicationSearchResultType"></element>
+	<element name="OtherSystemSearchResult"></element>
+
+</schema>
