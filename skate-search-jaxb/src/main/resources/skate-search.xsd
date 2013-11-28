@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:search="http://www.fao.org/fi/skate/search/">
+<schema elementFormDefault="qualified" targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:search="http://www.fao.org/fi/skate/search/">
+
+
+
 
 	<complexType name="MultiQuerySearchResultType">
 		<sequence>
