@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema"
-	xmlns:search="http://www.fao.org/fi/skate/search/">
+<schema targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:search="http://www.fao.org/fi/skate/search/">
 
 	<complexType name="MultiQuerySearchResultType">
 		<sequence>
@@ -17,11 +16,30 @@
 		<sequence>
 			<element name="infoLinkIcon" type="search:InfoLinkIconType" minOccurs="0" maxOccurs="unbounded"></element>
 		</sequence>
+		<attribute name="description" type="string"></attribute>
+		<attribute name="title" type="string"></attribute>
+		<attribute name="hrefHtmlVersion" type="string"></attribute>
+		<attribute name="infoLink" type="string"></attribute>
+		<attribute name="publicationTitle" type="string"></attribute>
+		<attribute name="year" type="int"></attribute>
 	</complexType>
 
 	<complexType name="ExtendedPublicationEntryFoundType">
 		<complexContent>
-			<extension base="search:PublicationEntryFoundType"></extension>
+			<extension base="search:PublicationEntryFoundType">
+				<attribute name="dataOwner" type="string"></attribute>
+				<attribute name="statutoryBody" type="string"></attribute>
+				<attribute name="isbn" type="string"></attribute>
+				<attribute name="programmeName" type="string"></attribute>
+				<attribute name="projectCodeNumber" type="int"></attribute>
+				<attribute name="projectName" type="string"></attribute>
+				<attribute name="documentNumber" type="string"></attribute>
+				<attribute name="jobNumber" type="string"></attribute>
+				<attribute name="typeOfPublication" type="string"></attribute>
+				<attribute name="otherTypeOfPublication" type="string"></attribute>
+				<attribute name="country" type="string"></attribute>
+				<attribute name="continent" type="string"></attribute>
+			</extension>
 		</complexContent>
 	</complexType>
 

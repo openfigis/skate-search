@@ -29,12 +29,12 @@ public class SearchResultMock {
 		e.getInfoLinkIcons().add(l);
 
 		PublicationEntryFoundType found = f.createPublicationEntryFoundType();
-		// f.setDescription("Implications of the Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 Relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks.");
-		// f.setTitle("Fisheries and research for tunas and tuna-like-species in the Western Central Atlantic");
-		// f.setHrefHtmlVersion("http://www.fao.org/docrep/X5623E/X5623E00.htm");
-		// f.setInfoLink("javascript:new_window('http://www.fao.org/fi/eims_search/1_dett.asp?calling=simple_s_result&lang=en&pub_id=64912','pop',1,1,1,1,1,1,1,600,600)");
-		// f.setPublicationTitle("FAO Fisheries Technical Paper T357");
-		// f.setYear(2013);
+		found.setDescription("Implications of the Agreement for the Implementation of the Provisions of the United Nations Convention on the Law of the Sea of 10 December 1982 Relating to the Conservation and Management of Straddling Fish Stocks and Highly Migratory Fish Stocks.");
+		found.setTitle("Fisheries and research for tunas and tuna-like-species in the Western Central Atlantic");
+		found.setHrefHtmlVersion("http://www.fao.org/docrep/X5623E/X5623E00.htm");
+		found.setInfoLink("javascript:new_window('http://www.fao.org/fi/eims_search/1_dett.asp?calling=simple_s_result&lang=en&pub_id=64912','pop',1,1,1,1,1,1,1,600,600)");
+		found.setPublicationTitle("FAO Fisheries Technical Paper T357");
+		found.setYear(2013);
 		found.getInfoLinkIcons().add(l);
 
 		PublicationSearchResult sss = f.createPublicationSearchResult();

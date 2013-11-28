@@ -22,7 +22,7 @@
 
 		<init-param>
 			<param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>
-			<param-value> org.skate.web.service.FdrContainerResponseFilter</param-value>
+			<param-value>org.skate.web.service.FdrContainerResponseFilter</param-value>
 		</init-param>
 
 
