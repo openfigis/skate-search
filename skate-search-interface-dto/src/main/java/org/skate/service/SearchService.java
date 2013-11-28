@@ -3,8 +3,8 @@
  */
 package org.skate.service;
 
+import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.request.PublicationSearchRequest;
-import org.skate.service.response.PublicationSearchResult;
 
 /**
  * @author Erik van Ingen

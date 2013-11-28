@@ -1,8 +1,8 @@
 package org.skate.service.impl;
 
+import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.SearchService;
 import org.skate.service.request.PublicationSearchRequest;
-import org.skate.service.response.PublicationSearchResult;
 import org.skate.service.test.SearchResultMock;
 import org.skate.service.test.SkateAbstractServiceTest;
 

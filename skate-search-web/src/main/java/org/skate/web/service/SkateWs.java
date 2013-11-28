@@ -8,9 +8,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.SearchService;
 import org.skate.service.request.PublicationSearchRequest;
-import org.skate.service.response.PublicationSearchResult;
 
 /**
  * 

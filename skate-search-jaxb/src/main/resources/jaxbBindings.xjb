@@ -23,6 +23,13 @@
 		<xjc:simple />
 	</jaxb:globalBindings>
 
+<!-- 
+	<jaxb:bindings node="/schema/complexType[5]/attribute[1]" schemaLocation="skate-search.xsd">
+		<jaxb:class name="java.net.URL" />
+	</jaxb:bindings>
+ -->
+
+
 
 
 </jaxb:bindings> 

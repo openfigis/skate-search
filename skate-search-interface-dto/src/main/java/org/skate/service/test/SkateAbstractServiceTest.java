@@ -4,10 +4,10 @@ import static org.junit.Assert.assertEquals;
 
 import javax.inject.Inject;
 
+import org.fao.fi.skate.search.PublicationSearchResult;
 import org.junit.Test;
 import org.skate.service.SearchService;
 import org.skate.service.request.PublicationSearchRequest;
-import org.skate.service.response.PublicationSearchResult;
 
 public abstract class SkateAbstractServiceTest {
 
@@ -20,7 +20,7 @@ public abstract class SkateAbstractServiceTest {
 	@Test
 	public void testSearch() {
 		PublicationSearchResult response = searchService.search(searchTerm);
-		assertEquals(response.getFoundElementList().size(), 1);
+		assertEquals(response.getPublicationEntryFounds().size(), 1);
 	}
 
 	@Test
@@ -33,7 +33,7 @@ public abstract class SkateAbstractServiceTest {
 		r.setSeriesTitle("");
 		r.setWordInTitle("");
 		PublicationSearchResult response = searchService.search(r);
-		assertEquals(ENTRIES_FOUND, response.getFoundElementList().size());
+		assertEquals(ENTRIES_FOUND, response.getPublicationEntryFounds().size());
 	}
 
 }

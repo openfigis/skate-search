@@ -173,6 +173,11 @@
 				<artifactId>logback-classic</artifactId>
 				<version>1.0.13</version>
 			</dependency>
+			<dependency>
+				<groupId>org.skate</groupId>
+				<artifactId>skate-search-jaxb</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -187,6 +192,10 @@
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.skate</groupId>
+			<artifactId>skate-search-jaxb</artifactId>
 		</dependency>
 	</dependencies>
 

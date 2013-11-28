@@ -7,6 +7,9 @@
         <dependent-module archiveName="skate-search-interface-dto-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/skate-search-interface-dto/skate-search-interface-dto">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="skate-search-jaxb-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/skate-search-jaxb/skate-search-jaxb">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/skate-search-web/target/classes"/>
         <property name="context-root" value="skate-search-web"/>
     </wb-module>

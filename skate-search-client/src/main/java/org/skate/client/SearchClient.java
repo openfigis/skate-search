@@ -2,9 +2,9 @@ package org.skate.client;
 
 import javax.ws.rs.core.MediaType;
 
+import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.SearchService;
 import org.skate.service.request.PublicationSearchRequest;
-import org.skate.service.response.PublicationSearchResult;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -23,7 +23,9 @@ public class SearchClient implements SearchService {
 	/**
 	 * TODO make this configurable
 	 */
-	private static String SERVER = "http://hqldvfigis1:6747/skate-search-web/";
+	// private static String SERVER =
+	// "http://hqldvfigis1:6747/skate-search-web/";
+	private static String SERVER = "http://localhost:8081/skate-search-web/";
 
 	private static String SEARCH = SERVER + "rest/search";
 	private static String ADVANCED_SEARCH = SERVER + "rest/advancedsearch";
