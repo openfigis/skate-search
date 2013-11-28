@@ -4,6 +4,7 @@
 package org.skate.service;
 
 import org.fao.fi.skate.search.PublicationSearchResult;
+import org.skate.service.request.ExtendedPublicationSearchRequest;
 import org.skate.service.request.PublicationSearchRequest;
 
 /**
@@ -14,6 +15,8 @@ public interface SearchService {
 
 	public PublicationSearchResult search(String searchTerm);
 
-	public PublicationSearchResult search(PublicationSearchRequest searchParameters);
+	public PublicationSearchResult advancedSearch(PublicationSearchRequest searchParameters);
+
+	public PublicationSearchResult extendedSearch(ExtendedPublicationSearchRequest searchParameters);
 
 }

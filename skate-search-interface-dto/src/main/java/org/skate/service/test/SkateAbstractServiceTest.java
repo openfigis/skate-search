@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.fao.fi.skate.search.PublicationSearchResult;
 import org.junit.Test;
 import org.skate.service.SearchService;
+import org.skate.service.request.ExtendedPublicationSearchRequest;
 import org.skate.service.request.PublicationSearchRequest;
 
 public abstract class SkateAbstractServiceTest {
@@ -32,7 +33,20 @@ public abstract class SkateAbstractServiceTest {
 		r.setPublicationYear(0);
 		r.setSeriesTitle("");
 		r.setWordInTitle("");
-		PublicationSearchResult response = searchService.search(r);
+		PublicationSearchResult response = searchService.advancedSearch(r);
+		assertEquals(ENTRIES_FOUND, response.getPublicationEntryFounds().size());
+	}
+
+	@Test
+	public void testExtendedSearch() {
+		ExtendedPublicationSearchRequest r = new ExtendedPublicationSearchRequest();
+		r.setSearchTerm(searchTerm);
+		r.setAuthors("");
+		r.setLanguage("");
+		r.setPublicationYear(0);
+		r.setSeriesTitle("");
+		r.setWordInTitle("");
+		PublicationSearchResult response = searchService.extendedSearch(r);
 		assertEquals(ENTRIES_FOUND, response.getPublicationEntryFounds().size());
 	}
 

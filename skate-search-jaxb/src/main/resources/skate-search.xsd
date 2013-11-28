@@ -24,25 +24,6 @@
 		<attribute name="year" type="int"></attribute>
 	</complexType>
 
-	<complexType name="ExtendedPublicationEntryFoundType">
-		<complexContent>
-			<extension base="search:PublicationEntryFoundType">
-				<attribute name="dataOwner" type="string"></attribute>
-				<attribute name="statutoryBody" type="string"></attribute>
-				<attribute name="isbn" type="string"></attribute>
-				<attribute name="programmeName" type="string"></attribute>
-				<attribute name="projectCodeNumber" type="int"></attribute>
-				<attribute name="projectName" type="string"></attribute>
-				<attribute name="documentNumber" type="string"></attribute>
-				<attribute name="jobNumber" type="string"></attribute>
-				<attribute name="typeOfPublication" type="string"></attribute>
-				<attribute name="otherTypeOfPublication" type="string"></attribute>
-				<attribute name="country" type="string"></attribute>
-				<attribute name="continent" type="string"></attribute>
-			</extension>
-		</complexContent>
-	</complexType>
-
 	<complexType name="InfoLinkIconType">
 		<attribute name="url" type="anyURI"></attribute>
 		<attribute name="linkType" type="search:LinkType"></attribute>
@@ -54,10 +35,12 @@
 		</restriction>
 	</simpleType>
 
-
-
-	<element name="PublicationSearchResult" type="search:PublicationSearchResultType"></element>
+	<!-- the future one, not yet used -->
 	<element name="MultiQuerySearchResult" type="search:MultiQuerySearchResultType"></element>
+
+	<!-- to be used for search in publications -->
+	<element name="PublicationSearchResult" type="search:PublicationSearchResultType"></element>
+
 	<element name="OtherSystemSearchResult"></element>
 
 </schema>

@@ -10,6 +10,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.SearchService;
+import org.skate.service.request.ExtendedPublicationSearchRequest;
 import org.skate.service.request.PublicationSearchRequest;
 
 /**
@@ -51,7 +52,50 @@ public class SkateWs {
 		r.setSearchTerm(searchTerm);
 		r.setSeriesTitle(seriesTitle);
 		r.setWordInTitle(wordInTitle);
-		return service.search(r);
+		return service.advancedSearch(r);
+	}
+
+	@GET
+	@Path("extendedsearch")
+	public PublicationSearchResult extendedSearch(@QueryParam("searchTerm") String searchTerm,
+			@QueryParam("wordInTitle") String wordInTitle, @QueryParam("authors") String authors,
+			@QueryParam("publicationYear") int publicationYear, @QueryParam("language") String language,
+			@QueryParam("seriesTitle") String seriesTitle, @QueryParam("dataOwner") String dataOwner,
+			@QueryParam("statutoryBody") String statutoryBody, @QueryParam("isbn") String isbn,
+			@QueryParam("programmeName") String programmeName,
+			@QueryParam("projectCodeNumber") String projectCodeNumber, @QueryParam("projectName") String projectName,
+			@QueryParam("documentNumber") String documentNumber, @QueryParam("jobNumber") String jobNumber,
+			@QueryParam("typeOfPublication") String typeOfPublication,
+			@QueryParam("otherTypeOfPublication") String otherTypeOfPublication, @QueryParam("country") String country,
+			@QueryParam("continent") String continent
+
+	) {
+		System.out.println("hitting SkateWs search ExtendedPublicationSearchRequest!!! with searchTerm:" + searchTerm);
+
+		ExtendedPublicationSearchRequest r = new ExtendedPublicationSearchRequest();
+		// advanced part
+		r.setAuthors(authors);
+		r.setLanguage(language);
+		r.setPublicationYear(publicationYear);
+		r.setSearchTerm(searchTerm);
+		r.setSeriesTitle(seriesTitle);
+		r.setWordInTitle(wordInTitle);
+
+		// extended part
+		r.setDataOwner(dataOwner);
+		r.setStatutoryBody(statutoryBody);
+		r.setIsbn(isbn);
+		r.setProgrammeName(programmeName);
+		r.setProjectCodeNumber(projectCodeNumber);
+		r.setProjectName(projectName);
+		r.setDocumentNumber(documentNumber);
+		r.setJobNumber(jobNumber);
+		r.setTypeOfPublication(typeOfPublication);
+		r.setOtherTypeOfPublication(otherTypeOfPublication);
+		r.setCountry(country);
+		r.setContinent(continent);
+
+		return service.extendedSearch(r);
 	}
 
 }
