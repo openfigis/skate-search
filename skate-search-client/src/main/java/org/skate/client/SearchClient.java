@@ -41,7 +41,7 @@ public class SearchClient implements SearchService {
 	public PublicationSearchResult search(String searchTerm) {
 
 		ClientResponse response = getWebResource(SEARCH).queryParam(SEARCH_TERM, searchTerm)
-				.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+				.accept(MediaType.APPLICATION_XML).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(PublicationSearchResult.class);
 
@@ -53,7 +53,7 @@ public class SearchClient implements SearchService {
 				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
 				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
 				.queryParam(LANGUAGE, sp.getLanguage()).queryParam(SERIESTITLE, sp.getSeriesTitle());
-		ClientResponse response = wr.accept(MediaType.APPLICATION_JSON).get(ClientResponse.class);
+		ClientResponse response = wr.accept(MediaType.APPLICATION_XML).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(PublicationSearchResult.class);
 	}
