@@ -24,9 +24,8 @@ public class SearchClient implements SearchService {
 	/**
 	 * TODO make this configurable
 	 */
-	// private static String SERVER =
-	// "http://hqldvfigis1:6747/skate-search-web/";
-	private static String SERVER = "http://localhost:8081/skate-search-web/";
+	private static String SERVER = "http://hqldvfigis1:6747/skate-search-web/";
+//	private static String SERVER = "http://localhost:8081/skate-search-web/";
 
 	private static String SEARCH = SERVER + "rest/search";
 	private static String ADVANCED_SEARCH = SERVER + "rest/advancedsearch";
