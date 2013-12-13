@@ -14,6 +14,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<repositories>
+		<repository>
+			<id>artifactory.fao.org-releases</id>
+			<name>artifactory.fao.org-releases</name>
+			<url>http://artifactory.fao.org/artifactory/ext-release-local</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 
@@ -55,10 +62,13 @@
 			<artifactId>skate-search-interface-dto</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org.fao.fdr</groupId>
+			<artifactId>fdr-oa-core</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>skate-search-web</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -71,4 +81,13 @@
 		</plugins>
 	</build>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.fao.fdr</groupId>
+				<artifactId>fdr-oa-core</artifactId>
+				<version>1.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
