@@ -2,7 +2,7 @@
 <schema elementFormDefault="qualified" targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:search="http://www.fao.org/fi/skate/search/">
 
-
+<!--  comments -->
 
 
 	<complexType name="MultiQuerySearchResultType">

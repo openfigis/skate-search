@@ -90,7 +90,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/skate-search-web</outputDirectory>
+							<outputDirectory>${basedir}/target/skate-search-web-0.0.1-SNAPSHOT</outputDirectory>
 							<resources>
 								<resource>
 									<directory>/../skate-search-jaxb/src/main/resources/</directory>
