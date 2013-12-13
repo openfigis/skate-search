@@ -27,7 +27,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public PublicationSearchResult search(String searchTerm) {
+	public PublicationSearchResult search(String lang, String searchTerm) {
 		// svc.search(query, filterQueries, sort, start, rows, params)
 
 		// String query = "text:fish*";
@@ -59,12 +59,12 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public PublicationSearchResult advancedSearch(PublicationSearchRequest searchParameters) {
+	public PublicationSearchResult advancedSearch(String lang, PublicationSearchRequest searchParameters) {
 		return SearchResultMock.get(SkateAbstractServiceTest.ENTRIES_FOUND);
 	}
 
 	@Override
-	public PublicationSearchResult extendedSearch(ExtendedPublicationSearchRequest searchParameters) {
+	public PublicationSearchResult extendedSearch(String lang, ExtendedPublicationSearchRequest searchParameters) {
 		return SearchResultMock.get(SkateAbstractServiceTest.ENTRIES_FOUND);
 	}
 

@@ -29,17 +29,18 @@ public class SkateWs {
 	@GET
 	@Path("search")
 	// @CrossOriginResourceSharing(allowAllOrigins = true)
-	public PublicationSearchResult search(@QueryParam("searchTerm") String searchTerm) {
+	public PublicationSearchResult search(@QueryParam("language") String language,
+			@QueryParam("searchTerm") String searchTerm) {
 		System.out.println("hitting SkateWs search searchTerm!!! with searchTerm:" + searchTerm);
 
-		return service.search(searchTerm);
+		return service.search(language, searchTerm);
 	}
 
 	@GET
 	@Path("advancedsearch")
-	public PublicationSearchResult advancedSearch(@QueryParam("searchTerm") String searchTerm,
-			@QueryParam("wordInTitle") String wordInTitle, @QueryParam("authors") String authors,
-			@QueryParam("publicationYear") int publicationYear, @QueryParam("language") String language,
+	public PublicationSearchResult advancedSearch(@QueryParam("language") String language,
+			@QueryParam("searchTerm") String searchTerm, @QueryParam("wordInTitle") String wordInTitle,
+			@QueryParam("authors") String authors, @QueryParam("publicationYear") int publicationYear,
 			@QueryParam("seriesTitle") String seriesTitle
 
 	) {
@@ -47,19 +48,18 @@ public class SkateWs {
 
 		PublicationSearchRequest r = new PublicationSearchRequest();
 		r.setAuthors(authors);
-		r.setLanguage(language);
 		r.setPublicationYear(publicationYear);
 		r.setSearchTerm(searchTerm);
 		r.setSeriesTitle(seriesTitle);
 		r.setWordInTitle(wordInTitle);
-		return service.advancedSearch(r);
+		return service.advancedSearch(language, r);
 	}
 
 	@GET
 	@Path("extendedsearch")
-	public PublicationSearchResult extendedSearch(@QueryParam("searchTerm") String searchTerm,
-			@QueryParam("wordInTitle") String wordInTitle, @QueryParam("authors") String authors,
-			@QueryParam("publicationYear") int publicationYear, @QueryParam("language") String language,
+	public PublicationSearchResult extendedSearch(@QueryParam("language") String language,
+			@QueryParam("searchTerm") String searchTerm, @QueryParam("wordInTitle") String wordInTitle,
+			@QueryParam("authors") String authors, @QueryParam("publicationYear") int publicationYear,
 			@QueryParam("seriesTitle") String seriesTitle, @QueryParam("dataOwner") String dataOwner,
 			@QueryParam("statutoryBody") String statutoryBody, @QueryParam("isbn") String isbn,
 			@QueryParam("programmeName") String programmeName,
@@ -75,7 +75,6 @@ public class SkateWs {
 		ExtendedPublicationSearchRequest r = new ExtendedPublicationSearchRequest();
 		// advanced part
 		r.setAuthors(authors);
-		r.setLanguage(language);
 		r.setPublicationYear(publicationYear);
 		r.setSearchTerm(searchTerm);
 		r.setSeriesTitle(seriesTitle);
@@ -95,7 +94,7 @@ public class SkateWs {
 		r.setCountry(country);
 		r.setContinent(continent);
 
-		return service.extendedSearch(r);
+		return service.extendedSearch(language, r);
 	}
 
 }

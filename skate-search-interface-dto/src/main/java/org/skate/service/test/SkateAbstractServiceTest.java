@@ -14,13 +14,14 @@ public abstract class SkateAbstractServiceTest {
 
 	public final static int ENTRIES_FOUND = 100;
 
+	String language = "nl";
 	String searchTerm = "asfis";
 	@Inject
 	protected SearchService searchService;
 
 	@Test
 	public void testSearch() {
-		PublicationSearchResult response = searchService.search(searchTerm);
+		PublicationSearchResult response = searchService.search(language, searchTerm);
 		assertEquals(response.getPublicationEntryFounds().size(), 1);
 	}
 
@@ -29,11 +30,11 @@ public abstract class SkateAbstractServiceTest {
 		PublicationSearchRequest r = new PublicationSearchRequest();
 		r.setSearchTerm(searchTerm);
 		r.setAuthors("");
-		r.setLanguage("");
+
 		r.setPublicationYear(0);
 		r.setSeriesTitle("");
 		r.setWordInTitle("");
-		PublicationSearchResult response = searchService.advancedSearch(r);
+		PublicationSearchResult response = searchService.advancedSearch(language, r);
 		assertEquals(ENTRIES_FOUND, response.getPublicationEntryFounds().size());
 	}
 
@@ -42,11 +43,11 @@ public abstract class SkateAbstractServiceTest {
 		ExtendedPublicationSearchRequest r = new ExtendedPublicationSearchRequest();
 		r.setSearchTerm(searchTerm);
 		r.setAuthors("");
-		r.setLanguage("");
+
 		r.setPublicationYear(0);
 		r.setSeriesTitle("");
 		r.setWordInTitle("");
-		PublicationSearchResult response = searchService.extendedSearch(r);
+		PublicationSearchResult response = searchService.extendedSearch(language, r);
 		assertEquals(ENTRIES_FOUND, response.getPublicationEntryFounds().size());
 	}
 

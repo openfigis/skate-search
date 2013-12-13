@@ -10,7 +10,6 @@ public class PublicationSearchRequest extends SearchRequest {
 	private String wordInTitle;
 	private String authors;
 	private int publicationYear;
-	private String language;
 	private String seriesTitle;
 
 	public String getWordInTitle() {
@@ -35,14 +34,6 @@ public class PublicationSearchRequest extends SearchRequest {
 
 	public void setPublicationYear(int publicationYear) {
 		this.publicationYear = publicationYear;
-	}
-
-	public String getLanguage() {
-		return language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
 	}
 
 	public String getSeriesTitle() {

@@ -13,10 +13,10 @@ import org.skate.service.request.PublicationSearchRequest;
  */
 public interface SearchService {
 
-	public PublicationSearchResult search(String searchTerm);
+	public PublicationSearchResult search(String lang, String searchTerm);
 
-	public PublicationSearchResult advancedSearch(PublicationSearchRequest searchParameters);
+	public PublicationSearchResult advancedSearch(String lang, PublicationSearchRequest searchParameters);
 
-	public PublicationSearchResult extendedSearch(ExtendedPublicationSearchRequest searchParameters);
+	public PublicationSearchResult extendedSearch(String lang, ExtendedPublicationSearchRequest searchParameters);
 
 }
