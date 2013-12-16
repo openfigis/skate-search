@@ -94,7 +94,7 @@
 							<outputDirectory>${basedir}/target/skate-search-web</outputDirectory>
 							<resources>
 								<resource>
-									<directory>/../skate-search-jaxb/src/main/resources/</directory>
+									<directory>../skate-search-jaxb/src/main/resources/</directory>
 									<filtering>true</filtering>
 									<includes>
 										<include>skate-search.xsd</include>
