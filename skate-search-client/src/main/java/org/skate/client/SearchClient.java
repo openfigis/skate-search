@@ -4,7 +4,6 @@ import javax.ws.rs.core.MediaType;
 
 import org.fao.fi.skate.search.PublicationSearchResult;
 import org.skate.service.SearchService;
-import org.skate.service.request.ExtendedPublicationSearchRequest;
 import org.skate.service.request.PublicationSearchRequest;
 
 import com.sun.jersey.api.client.Client;
@@ -49,20 +48,8 @@ public class SearchClient implements SearchService {
 	@Override
 	public PublicationSearchResult advancedSearch(String language, PublicationSearchRequest sp) {
 		WebResource wr = getWebResource(ADVANCED_SEARCH).queryParam(SEARCH_TERM, sp.getSearchTerm())
-				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
-				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
-				.queryParam(SERIESTITLE, sp.getSeriesTitle());
-		ClientResponse response = wr.accept(MediaType.APPLICATION_XML).get(ClientResponse.class);
-		evaluateResponse(response);
-		return response.getEntity(PublicationSearchResult.class);
-	}
-
-	@Override
-	public PublicationSearchResult extendedSearch(String language, ExtendedPublicationSearchRequest sp) {
-		WebResource wr = getWebResource(ADVANCED_SEARCH).queryParam(SEARCH_TERM, sp.getSearchTerm())
-				.queryParam(WORDINTITLE, sp.getWordInTitle()).queryParam(AUTHORS, sp.getAuthors())
-				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getPublicationYear()))
-				.queryParam(SERIESTITLE, sp.getSeriesTitle());
+				.queryParam(WORDINTITLE, sp.getWordsInTitle()).queryParam(AUTHORS, sp.getAuthor())
+				.queryParam(PUBLICATIONYEAR, Integer.toString(sp.getYear())).queryParam(SERIESTITLE, sp.getSeries());
 		ClientResponse response = wr.accept(MediaType.APPLICATION_XML).get(ClientResponse.class);
 		evaluateResponse(response);
 		return response.getEntity(PublicationSearchResult.class);
