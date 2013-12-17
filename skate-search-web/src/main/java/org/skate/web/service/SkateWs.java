@@ -38,19 +38,18 @@ public class SkateWs {
 	@GET
 	@Path("advancedsearch")
 	public PublicationSearchResult advancedSearch(@QueryParam("language") String language,
-			@QueryParam("searchTerm") String searchTerm, @QueryParam("wordInTitle") String wordInTitle,
-			@QueryParam("authors") String authors, @QueryParam("publicationYear") int publicationYear,
-			@QueryParam("seriesTitle") String seriesTitle
+			@QueryParam("searchTerm") String searchTerm, @QueryParam("wordsInTitle") String wordsInTitle,
+			@QueryParam("author") String author, @QueryParam("year") int year, @QueryParam("series") String series,
+			@QueryParam("owner") String owner, @QueryParam("statutoryBody") String statutoryBody,
+			@QueryParam("isbn") String isbn, @QueryParam("programmeName") String programmeName,
+			@QueryParam("projectName") String projectName, @QueryParam("documentNumber") String documentNumber,
+			@QueryParam("jobNumber") String jobNumber, @QueryParam("publicationType") String publicationType,
+			@QueryParam("country") String country, @QueryParam("continent") String continent
 
 	) {
 		System.out.println("hitting SkateWs search advancedSearchRequest!!! with searchTerm:" + searchTerm);
 
 		PublicationSearchRequest r = new PublicationSearchRequest();
-		r.setAuthor(authors);
-		r.setYear(publicationYear);
-		r.setSearchTerm(searchTerm);
-		r.setSeries(seriesTitle);
-		r.setWordsInTitle(wordInTitle);
 		return service.advancedSearch(language, r);
 	}
 

@@ -15,7 +15,6 @@ public class PublicationSearchRequest extends SearchRequest {
 	private String wordsInTitle;
 	private String author;
 	private int year;
-	private String language;
 	private String series;
 	private String owner;
 	private String statutoryBody;
@@ -50,14 +49,6 @@ public class PublicationSearchRequest extends SearchRequest {
 
 	public void setYear(int year) {
 		this.year = year;
-	}
-
-	public String getLanguage() {
-		return language;
-	}
-
-	public void setLanguage(String language) {
-		this.language = language;
 	}
 
 	public String getSeries() {
