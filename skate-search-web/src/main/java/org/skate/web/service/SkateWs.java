@@ -30,7 +30,7 @@ public class SkateWs {
 	// @CrossOriginResourceSharing(allowAllOrigins = true)
 	public PublicationSearchResult search(@QueryParam("language") String language,
 			@QueryParam("searchTerm") String searchTerm) {
-		System.out.println("hitting SkateWs search searchTerm!!! with searchTerm:" + searchTerm);
+		System.out.println("hitting SkateWs search searchTerm!!! with params:" + language + searchTerm);
 
 		return service.search(language, searchTerm);
 	}
@@ -47,7 +47,9 @@ public class SkateWs {
 			@QueryParam("country") String country, @QueryParam("continent") String continent
 
 	) {
-		System.out.println("hitting SkateWs search advancedSearchRequest!!! with searchTerm:" + searchTerm);
+		System.out.println("hitting SkateWs search advancedSearchRequest!!! with searchTerm:" + language + searchTerm
+				+ wordsInTitle + author + year + language + series + owner + statutoryBody + isbn + programmeName
+				+ projectName + documentNumber + jobNumber + publicationType + country + continent);
 
 		PublicationSearchRequest r = new PublicationSearchRequest();
 		return service.advancedSearch(language, r);
