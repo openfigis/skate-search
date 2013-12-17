@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <search:PublicationSearchResult xmlns:search="http://www.fao.org/fi/skate/search/">
-    <search:publicationEntryFound>
-        <search:infoLinkIcon url="www.fao.org" linkType="pdf"/>
-    </search:publicationEntryFound>
+    <search:publicationEntryFound author="Erik"/>
 </search:PublicationSearchResult>

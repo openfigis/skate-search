@@ -104,12 +104,13 @@ public class PublicationSearchResultTest extends XMLTestCase {
 	public PublicationSearchResult prepareExpectedResult() {
 		ObjectFactory f = new ObjectFactory();
 
-		InfoLinkIconType l = f.createInfoLinkIconType();
-		l.setUrl("www.fao.org");
-		l.setLinkType(LinkType.PDF);
+		// InfoLinkIconType l = f.createInfoLinkIconType();
+		// l.setUrl("www.fao.org");
+		// l.setLinkType(LinkType.PDF);
 
 		PublicationEntryFoundType e = f.createPublicationEntryFoundType();
-		e.getInfoLinkIcons().add(l);
+		e.setAuthor("Erik");
+		// e.getInfoLinkIcons().add(l);
 
 		PublicationSearchResult r = f.createPublicationSearchResult();
 		r.getPublicationEntryFounds().add(e);

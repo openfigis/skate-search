@@ -2,7 +2,7 @@
 <schema elementFormDefault="qualified" targetNamespace="http://www.fao.org/fi/skate/search/" xmlns="http://www.w3.org/2001/XMLSchema"
 	xmlns:search="http://www.fao.org/fi/skate/search/">
 
-<!--  comments -->
+	<!-- comments -->
 
 
 	<complexType name="MultiQuerySearchResultType">
@@ -17,27 +17,30 @@
 	</complexType>
 
 	<complexType name="PublicationEntryFoundType">
-		<sequence>
-			<element name="infoLinkIcon" type="search:InfoLinkIconType" minOccurs="0" maxOccurs="unbounded"></element>
-		</sequence>
-		<attribute name="description" type="string"></attribute>
 		<attribute name="title" type="string"></attribute>
-		<attribute name="hrefHtmlVersion" type="string"></attribute>
-		<attribute name="infoLink" type="string"></attribute>
-		<attribute name="publicationTitle" type="string"></attribute>
+		<attribute name="abstract" type="string"></attribute>
+		<attribute name="author" type="string"></attribute>
+		<attribute name="pages" type="string"></attribute>
+		<attribute name="biblioReference" type="string"></attribute>
+		<attribute name="owner" type="string"></attribute>
+		<attribute name="jobNumber" type="string"></attribute>
+		<attribute name="documentNumber" type="string"></attribute>
+		<attribute name="series" type="string"></attribute>
+		<attribute name="language" type="string"></attribute>
+		<attribute name="statutoryBody" type="string"></attribute>
+		<attribute name="isbn" type="string"></attribute>
+		<attribute name="programmeName" type="string"></attribute>
+		<attribute name="projectName" type="string"></attribute>
+		<attribute name="publicationType" type="string"></attribute>
+		<attribute name="country" type="string"></attribute>
 		<attribute name="year" type="int"></attribute>
+		<attribute name="htmlUrl" type="string"></attribute>
+		<attribute name="pdfUrl" type="string"></attribute>
+		<attribute name="zipUrl" type="string"></attribute>
+		<attribute name="coverUrl" type="string"></attribute>
+		<attribute name="popupUrl" type="string"></attribute>
 	</complexType>
 
-	<complexType name="InfoLinkIconType">
-		<attribute name="url" type="anyURI"></attribute>
-		<attribute name="linkType" type="search:LinkType"></attribute>
-	</complexType>
-	<simpleType name="LinkType">
-		<restriction base="string">
-			<enumeration value="zip" />
-			<enumeration value="pdf" />
-		</restriction>
-	</simpleType>
 
 	<!-- the future one, not yet used -->
 	<element name="MultiQuerySearchResult" type="search:MultiQuerySearchResultType"></element>
